@@ -42,33 +42,28 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-//CompletedTask function
 fun CompletedTask() {
     Column(
-        //center align content vertically/horizontally on screen
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        //image from download
         val image = painterResource(R.drawable.ic_task_completed)
         Image(painter = image, contentDescription = null)
-        //text1: bold, top padding 24dp, bottom padding 9dp (All tasks completed)
         Text(
             text = stringResource(R.string.all_tasks_completed),
             modifier = Modifier.padding(top = 24.dp, bottom = 9.dp),
-            fontWeight = FontWeight.Bold
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
         )
-        //text2: font size 15sp (Nice work!)
         Text(
             text = stringResource(R.string.nice_work),
             fontSize = 15.sp
         )
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
